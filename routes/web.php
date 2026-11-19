@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // --- Member 1 — Home page
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 });
 
