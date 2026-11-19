@@ -1,0 +1,266 @@
+/* --- LATELY CAFÉ — SHARED STYLES (since loaded on every page) ---
+   Variables, theme, header/nav, footer, texture, inner-page titles.
+   Page-specific styles live in home.css / about.css / contact.css */
+
+/* --- Theme variables --- */
+:root {
+    --outer: #e16a3d;
+    --cream: #f4ead5;
+    --paper: #f8f0df;
+    --ink: #452016;
+    --brown: #642414;
+    --orange: #e16a3d;
+    --muted: #8e6d58;
+    --gold: #e16a3d;
+    --green: #338c70;
+    --line: rgba(69, 32, 22, 0.16);
+    --shadow: 0 18px 55px rgba(69, 32, 22, 0.18);
+    --card-shadow:
+        0 20px 34px rgba(69, 32, 22, 0.14), 0 5px 10px rgba(69, 32, 22, 0.08);
+}
+
+body.dark {
+    --outer: #21130f;
+    --cream: #f4ead5;
+    --paper: #33251f;
+    --ink: #f1e2cf;
+    --brown: #1d120f;
+    --orange: #e16a3d;
+    --muted: #c7ad98;
+    --gold: #e16a3d;
+    --green: #5da083;
+    --line: rgba(241, 226, 207, 0.18);
+    --shadow: 0 18px 55px rgba(0, 0, 0, 0.32);
+    --card-shadow:
+        0 20px 34px rgba(0, 0, 0, 0.28), 0 5px 10px rgba(0, 0, 0, 0.18);
+}
+
+/* --- Base --- */
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 35%),
+        var(--outer);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+    transition:
+        background 0.25s,
+        color 0.25s;
+}
+
+/* --- Monochrome embossed floral texture on every page --- */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+    background: url("../images/texture.jpg") center / 560px auto repeat;
+    filter: grayscale(2) contrast(0.99);
+    mix-blend-mode: multiply;
+    opacity: 0.1;
+}
+body.dark::before {
+    mix-blend-mode: screen;
+    opacity: 0.055;
+}
+
+.site-shell {
+    width: min(1120px, calc(100% - 64px));
+    margin: 44px auto 34px;
+    background: var(--cream);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+/* --- Header / navigation --- */
+.site-header {
+    height: 68px;
+    padding: 0 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 5;
+    background: var(--paper);
+}
+.wordmark-small {
+    display: flex;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    text-decoration: none;
+    background-color: var(--orange);
+    -webkit-mask: url("../images/logo.png") center/contain no-repeat;
+    mask: url("../images/logo.png") center/contain no-repeat;
+}
+.wordmark-small img,
+.site-footer a img {
+    display: none;
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.main-nav a {
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: color 0.2s;
+}
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--orange);
+}
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.theme-toggle,
+.menu-toggle {
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: 20px;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.theme-toggle:hover,
+.menu-toggle:hover {
+    background: rgba(17, 140, 140, 0.18);
+}
+.menu-toggle {
+    display: none;
+}
+
+/* --- Shared type --- */
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    font-weight: 700;
+    margin: 0 0 13px;
+    color: var(--ink);
+}
+
+/* --- Inner-page (About / Contact) hero title --- */
+.inner-title {
+    text-align: center;
+    padding: 54px 20px 30px;
+}
+.inner-title h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.02;
+    color: var(--orange);
+    margin: 0;
+}
+.inner-title h1 em {
+    font-weight: 500;
+    color: var(--orange);
+}
+.inner-intro {
+    max-width: 490px;
+    margin: 18px auto 0;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+body.dark .inner-intro {
+    color: #f1e4ce;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background: var(--cream);
+    padding: 22px 7.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+}
+.site-footer a {
+    display: flex;
+    width: 34px;
+    height: 34px;
+    background-color: var(--orange);
+    -webkit-mask: url("../images/logo.png") center/contain no-repeat;
+    mask: url("../images/logo.png") center/contain no-repeat;
+}
+body.dark .site-footer {
+    background: #2f211b;
+    color: #d8c7ae;
+}
+
+/* --- Tablet --- */
+@media (min-width: 701px) and (max-width: 900px) {
+    .site-shell {
+        width: calc(100% - 40px);
+        margin: 22px auto;
+    }
+}
+
+/* --- Mobile --- */
+@media (max-width: 700px) {
+    .site-shell {
+        width: calc(100% - 24px);
+        margin: 12px auto 18px;
+        border-radius: 13px;
+    }
+    .site-header {
+        height: 58px;
+        padding: 0 19px;
+    }
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 55px;
+        left: 12px;
+        right: 12px;
+        padding: 16px;
+        background: var(--paper);
+        box-shadow: 0 10px 25px rgba(14, 105, 115, 0.13);
+        border-radius: 8px;
+        flex-direction: column;
+        gap: 17px;
+        align-items: flex-start;
+    }
+    .main-nav.open {
+        display: flex;
+    }
+    .menu-toggle {
+        display: grid;
+        font-size: 18px;
+    }
+    .site-footer {
+        padding: 18px;
+        gap: 12px;
+        flex-wrap: wrap;
+        font-size: 7px;
+    }
+    .site-footer span:nth-child(2) {
+        display: none;
+    }
+    .inner-title {
+        padding: 48px 20px 25px;
+    }
+    .inner-title h1 {
+        font-size: 43px;
+    }
+}

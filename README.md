@@ -1,58 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Group Information
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Group Name | Team Lately
+Section | IT 110 - AIBJ2
+Repository | Lara-Proj-IT110AIBJ2-Buladaco-Bilbao-Moca |
 
-## About Laravel
+# Members
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. Stefaney Buladaco (Member 1)
+2. Bernie Bilbao (Member 2)
+3. Ranier Moca ((Member 3))
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Theme
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+A multi-page Laravel web application for **Lately Café**, a cozy café serving pastries and beverages for people who want to slow down: coffee, freshly baked pastries, and a warm place to sit.
 
-## Learning Laravel
+# Modules and Branches
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| Member | Module | Branch | JavaScript feature
+| Stefaney Buladaco (Member 1, Leader) | Project setup, master layout, Home page | `dev-member1-Buladaco` | Image carousel and dark/light mode toggle
+| Bernie Bilbao (Member 2) | About page | `dev-member2-Bilbao` | "Read more / Read less" toggle
+| Ranier Moca (Member 3) | Contact page | `dev-member3-Moca` | Client-side form validation with success message
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# Screenshots
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## Home page
 
-## Agentic Development
+![Home Page](screenshots/home.png)
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## About page
+
+![About page](screenshots/about.png)
+
+## Contact page
+
+![Contact page](screenshots/contact.png)
+
+# Steps to Run the Project
+
+## Prerequisites
+
+Before running the project, make sure you have installed the following:
+
+- PHP 8.3 or higher
+- Composer
+- Laravel-compatible PHP extensions
+- Git
+- A code editor (VS Code recommended)
+
+## 1. Clone the Repository
+
+Open your terminal and run:
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/stefaney-tech/Lara-Proj-IT110AIBJ2-Buladaco-Bilbao-Moca.git
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## 2. Navigate to the Project Folder
 
-## Contributing
+```bash
+cd Lara-Proj-IT110AIBJ2-Buladaco-Bilbao-Moca
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 3. Install Dependencies
 
-## Code of Conduct
+Install the required PHP packages using Composer:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+composer install
+```
 
-## Security Vulnerabilities
+## 4. Create the Environment File
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Copy the example environment file:
 
-## License
+**Windows:**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+copy .env.example .env
+```
+
+**macOS / Linux:**
+
+```bash
+cp .env.example .env
+```
+
+## 5. Generate the Application Key
+
+```bash
+php artisan key:generate
+```
+
+## 6. Configure the Database
+
+Open the `.env` file and configure the database settings according to your local environment.
+For a default SQLite setup, make sure the SQLite database file exists and the database connection is configured correctly.
+
+## 7. Run Database Migrations
+
+```bash
+php artisan migrate
+```
+
+## 8. Start the Laravel Development Server
+
+```bash
+php artisan serve
+```
+
+## 9. Open the Website
+
+Open your browser and visit:
+http://127.0.0.1:8000
+
+The Lately Café website should now be running locally.
+
+---
+
+**Note:** Do not commit or upload your `.env` file or `vendor` folder to the GitHub repository. These are generated or locally configured during project setup.
