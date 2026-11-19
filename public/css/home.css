@@ -304,6 +304,10 @@ body.dark .product-card::before {
     border-top: 1px solid var(--line);
     padding-top: 9px;
 }
+/* --- Keep product card divider lines visible in both themes --- */
+body.dark .product-meta {
+    border-top-color: rgba(69, 32, 22, 0.18);
+}
 .price {
     font-size: 13px;
     font-weight: 700;
