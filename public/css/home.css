@@ -357,19 +357,29 @@ body.dark .tiny-note {
     background: var(--orange);
     transform: scale(1.25);
 }
+
 .bottom-note {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid var(--line);
+
+    /* --- Consistent cream-colored horizontal divider --- */
+    border-top: 1px solid rgba(244, 234, 213, 0.45);
+
     padding-top: 15px;
-    font-size: 12px;
+    font-size: 9px;
     letter-spacing: 0.15em;
-    color: var(--muted);
+    color: #d4b49a;
 }
+
 .bottom-note a {
-    color: var(--orange);
+    color: #f3d6b0;
     text-decoration: none;
+}
+
+/* --- Keep the same divider color in dark mode --- */
+body.dark .bottom-note {
+    border-top-color: rgba(244, 234, 213, 0.45);
 }
 
 /* --- Large screens --- */
