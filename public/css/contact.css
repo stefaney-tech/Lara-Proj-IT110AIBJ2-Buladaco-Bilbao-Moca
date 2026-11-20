@@ -9,6 +9,9 @@
 .contact-hero .inner-title {
     padding-bottom: 60px;
 }
+.contact-hero .inner-intro {
+    color: var(--ink);
+}
 
 /* --- Layout --- */
 .contact-layout {
@@ -46,7 +49,7 @@ body.dark .contact-details h2 {
     color: #f1e4ce;
 }
 .detail-item {
-    border-top: 1px solid var(--line);
+    border-top: 1px solid rgba(255, 244, 228, 0.28);
     padding: 17px 0;
 }
 .detail-item span {
@@ -104,10 +107,17 @@ body.dark .contact-form .eyebrow {
     font:
         12px "DM Sans",
         sans-serif;
-    color: var(--ink);
+    color: #452016; /* --- Consistent text color in both themes */
     border-radius: 2px;
     outline: none;
     resize: vertical;
+}
+
+/* --- Keep placeholder text consistent as well */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #806653;
+    opacity: 1;
 }
 .contact-form input.invalid,
 .contact-form textarea.invalid {
@@ -122,6 +132,7 @@ body.dark .contact-form input,
 body.dark .contact-form textarea {
     background: #f8f0df;
     border-color: #d8c5ad;
+    color: #452016; /* --- Same text color as light mode */
 }
 .field-error {
     display: block;
