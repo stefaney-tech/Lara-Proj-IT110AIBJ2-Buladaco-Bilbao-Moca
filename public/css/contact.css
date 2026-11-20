@@ -1,0 +1,198 @@
+/* --- LATELY CAFÉ — CONTACT PAGE STYLES
+   Requires style.css to be loaded first. --- */
+
+/* --- Hero --- */
+.contact-hero {
+    background: var(--paper);
+    padding-bottom: 20px;
+}
+.contact-hero .inner-title {
+    padding-bottom: 60px;
+}
+.contact-hero .inner-intro {
+    color: var(--ink);
+}
+
+/* --- Layout --- */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 65px;
+    padding: 70px 9%;
+    align-items: start;
+    background: var(--brown);
+    color: var(--cream);
+}
+body.dark .contact-layout {
+    background: #29392c;
+}
+
+/* --- Contact details --- */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+.contact-details h2 {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    font-size: clamp(36px, 5vw, 55px);
+    line-height: 1.06;
+    margin: 0 0 28px;
+    color: var(--cream);
+}
+.contact-details h2 em {
+    font-weight: 500;
+    color: var(--orange);
+}
+body.dark .contact-details h2 {
+    color: #f1e4ce;
+}
+.detail-item {
+    border-top: 1px solid rgba(255, 244, 228, 0.28);
+    padding: 17px 0;
+}
+.detail-item span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--cream);
+    margin-bottom: 8px;
+}
+body.dark .detail-item span {
+    color: #f1e4ce;
+}
+.detail-item p,
+.detail-item a {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #e2cbb5;
+    text-decoration: none;
+    margin: 0;
+}
+
+/* --- Form --- */
+.contact-form {
+    background: var(--cream);
+    color: var(--ink);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: var(--card-shadow);
+}
+body.dark .contact-form {
+    background: #f0e3ce;
+    color: #452016;
+}
+body.dark .contact-form .eyebrow {
+    color: #452016;
+}
+.contact-form h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    font-weight: 500;
+    margin: 0 0 24px;
+}
+.contact-form label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    margin: 15px 0 7px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    padding: 12px 13px;
+    font:
+        12px "DM Sans",
+        sans-serif;
+    color: #452016; /* --- Consistent text color in both themes */
+    border-radius: 2px;
+    outline: none;
+    resize: vertical;
+}
+
+/* --- Keep placeholder text consistent as well */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #806653;
+    opacity: 1;
+}
+.contact-form input.invalid,
+.contact-form textarea.invalid {
+    border-color: #bf820f;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 2px rgba(225, 106, 61, 0.16);
+}
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+    background: #f8f0df;
+    border-color: #d8c5ad;
+    color: #452016; /* --- Same text color as light mode */
+}
+.field-error {
+    display: block;
+    min-height: 0;
+    color: #b52d24;
+    font-size: 10px;
+    margin-top: 4px;
+}
+.submit-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #c9431c;
+    color: #fff4e4;
+    border: 0;
+    padding: 14px 16px;
+    margin-top: 18px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    cursor: pointer;
+}
+.submit-button:hover {
+    background: #a93213;
+}
+.form-success {
+    font-size: 12px;
+    color: #b52d24;
+    line-height: 1.5;
+}
+.form-disclaimer {
+    font-size: 9px;
+    line-height: 1.5;
+    color: #806653;
+    margin-bottom: 0;
+}
+
+/* --- Tablet --- */
+@media (min-width: 701px) and (max-width: 900px) {
+    .contact-layout {
+        gap: 30px;
+        padding: 55px 6%;
+    }
+}
+
+/* --- Mobile --- */
+@media (max-width: 700px) {
+    .contact-hero .inner-title {
+        padding-bottom: 42px;
+    }
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 45px 22px;
+    }
+    .contact-details h2 {
+        margin-bottom: 25px;
+    }
+    .contact-form {
+        padding: 22px;
+    }
+}

@@ -12,5 +12,7 @@ Route::get('/about', function () {
     return view('about');
 });
 
-// --- Member 3 will add the Contact route here:
-// Route::get('/contact', function () { return view('contact'); });
+// --- Member 3 — Contact page
+Route::get('/contact', function (){
+    return view('contact');
+});
