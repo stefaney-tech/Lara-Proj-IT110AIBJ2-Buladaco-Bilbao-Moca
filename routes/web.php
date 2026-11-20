@@ -13,6 +13,6 @@ Route::get('/about', function () {
 });
 
 // --- Member 3 — Contact page
-Route::get('/contact', function ()
-    { return view('contact');
+Route::get('/contact', function (){
+    return view('contact');
 });
